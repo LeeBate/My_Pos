@@ -6,7 +6,8 @@ const LeftSection = async () => {
     const oneTouchInfo = await getOneTouchFromApi();
     return <LeftSectionClient oneTouchInfo={oneTouchInfo} />;
   } catch (error: any) {
-    return <div>Error fetching data {error}</div>;
+    console.log("Error fetching OneTouch data:", error);
+    return <div>Error fetching data </div>;
   }
 };
 
