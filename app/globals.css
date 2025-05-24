@@ -3,26 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --background: #F5F5F5;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f5f5f5;
 }
 
 @font-face {
-  font-family: 'Sarabun';
-  src: url('../public/fonts/Sarabun-Medium.ttf') format('truetype');
+  font-family: "Sarabun";
+  src: url("../public/fonts/Sarabun-Medium.ttf") format("truetype");
   font-style: normal;
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
-  font-family: 'Sarabun';
-    overflow: hidden;
+  font-family: "Sarabun";
+  overflow: hidden;
 }

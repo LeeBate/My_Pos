@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -31,9 +31,12 @@ function GridPagination({
   disableNext,
   disablePrev,
 }: GridPaginationProps) {
-
-
-  const ButtonArrow = ({ direction, disable = false, onPrev, onNext }: ButtonArrowProps) => {
+  const ButtonArrow = ({
+    direction,
+    disable = false,
+    onPrev,
+    onNext,
+  }: ButtonArrowProps) => {
     const imgBack = disable ? menuArrowBack : menuArrowGreenBack;
     const imgNext = disable ? menuArrowNext : menuArrowGreenNext;
     const img = direction === "back" ? imgBack : imgNext;
@@ -46,18 +49,18 @@ function GridPagination({
         className={`
           flex items-center justify-center
           rounded-[1.852vh]
-          w-[7vw] xl:w-[5.333vw]
+          w-[4vw] xl:w-[5.333vw]
           h-[4.667vh] xl:h-[6.926vh]
           transition-none
           shadow-none
-          hover:bg-current
-          ${disable 
-            ? 'bg-gray-100 border border-gray-300 xl:border-2' 
-            : 'bg-white border border-green-800 xl:border-2 border-green-800'
+          ${
+            disable
+              ? "bg-gray-100 border border-gray-300 xl:border-2"
+              : "bg-white border border-green-800 xl:border-2 border-green-800"
           }
         `}
         style={{
-          borderColor: disable ? '#C4C4C4' : '#125C13',
+          borderColor: disable ? "#C4C4C4" : "#125C13",
         }}
       >
         <Image
@@ -65,7 +68,7 @@ function GridPagination({
           alt={`${direction} arrow`}
           className={`
             h-[2.6vh] w-auto
-            ${disable ? 'opacity-50' : 'opacity-100'}
+            ${disable ? "opacity-50" : "opacity-100"}
           `}
         />
       </button>
@@ -73,27 +76,27 @@ function GridPagination({
   };
 
   return (
-    <div className="flex flex-row items-center justify-center w-full gap-3 xl:gap-1 ml-0 py-5">
+    <div className="flex flex-row items-center justify-center w-full gap-2 xl:gap-1 ml-0 py-2">
       <div>
-        <ButtonArrow 
-          direction="back" 
-          disable={disablePrev} 
+        <ButtonArrow
+          direction="back"
+          disable={disablePrev}
           onPrev={onPrev}
           onNext={onNext}
         />
       </div>
       <div className="px-1 xl:px-2">
-        <p 
-          className="text-2xl font-normal xl:font-medium"
-          style={{ color: '#666666' }}
+        <p
+          className="text-sm xl:text-2xl font-normal xl:font-medium"
+          style={{ color: "#666666" }}
         >
-         หน้า {currentPage || 1} / {totalPage || 1}
+          หน้า {currentPage || 1} / {totalPage || 1}
         </p>
       </div>
       <div>
-        <ButtonArrow 
-          direction="next" 
-          disable={disableNext} 
+        <ButtonArrow
+          direction="next"
+          disable={disableNext}
           onPrev={onPrev}
           onNext={onNext}
         />

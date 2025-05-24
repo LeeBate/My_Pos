@@ -1,5 +1,5 @@
 import { getOneTouchFromApi } from "@/services/onetouchService";
-import LeftSectionClient from "./left-section-client"; // import client component
+import LeftSectionClient from "./left-section/left-section-client"; // import client component
 
 const LeftSection = async () => {
   return <LeftSectionClient />;
