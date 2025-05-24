@@ -11,7 +11,7 @@ type Props = {
 };
 
 const LeftSectionClient = ({ oneTouchInfo }: Props) => {
-  const itemsize = 10;
+  const itemsize = 20;
   const pagsize = Math.ceil(oneTouchInfo?.length / itemsize);
   const [currentindex, setCurrentindex] = useState(1);
 
@@ -23,6 +23,31 @@ const LeftSectionClient = ({ oneTouchInfo }: Props) => {
   const handleBack = () => {
     swiperRef.current?.slidePrev();
   };
+
+  const renderSwiperSlide = (j: number) => (
+    <SwiperSlide key={`page-${j}`}>
+      <div className="grid grid-cols-4 xl:grid-cols-5 gap-3 place-items-center">
+        {oneTouchInfo
+          .slice(
+            j === 0 ? 0 : j * itemsize,
+            j === 0 ? itemsize : itemsize * (j + 1)
+          )
+          .map((item) => (
+            <div
+              key={item._id}
+              className="w-[129px] h-[181px] bg-white shadow-sm rounded-[20px] p-4 flex flex-col items-center border border-gray-200"
+            >
+              <img
+                src={item.image}
+                alt={item.description}
+                className="w-full h-32 object-cover rounded-[20px] mb-2"
+              />
+              <h2 className="text-xl text-center">{item.description}</h2>
+            </div>
+          ))}
+      </div>
+    </SwiperSlide>
+  );
 
   return (
     <div className="w-full max-h-screen flex flex-col ">
@@ -37,42 +62,19 @@ const LeftSectionClient = ({ oneTouchInfo }: Props) => {
         disablePrev={currentindex <= 1}
         disableNext={currentindex >= pagsize}
       />
-
+      {/* one-touch */}
       <Swiper
-  spaceBetween={20}
-  slidesPerView={1}
-  allowTouchMove={true}
-  onSwiper={(swiper) => {
-    swiperRef.current = swiper;
-  }}
-  onSlideChange={(swiper) => setCurrentindex(swiper.activeIndex + 1)}
->
-  {[...Array(pagsize)].map((_, j) => {
-    const items = oneTouchInfo.slice(j * itemsize, (j + 1) * itemsize);
-    console.log(`Page ${j + 1}:`, items); // 🔍 log ที่นี่ได้เลย
-
-    return (
-      <SwiperSlide key={`page-${j}`}>
-        <div className="grid grid-cols-4 xl:grid-cols-5 gap-3 place-items-center">
-          {items.map((item) => (
-            <div
-              key={item._id}
-              className="w-[129px] h-[181px] bg-white shadow-sm rounded-[20px] p-4 flex flex-col items-center border border-gray-200"
-            >
-              <img
-                src={item.image}
-                alt={item.description}
-                className="w-full h-32 object-cover rounded-[20px] mb-2"
-              />
-              <h2 className="text-xl text-center">{item.description}</h2>
-            </div>
-          ))}
-        </div>
-      </SwiperSlide>
-    );
-  })}
-</Swiper>
-
+        spaceBetween={20}
+        slidesPerView={1}
+        allowTouchMove={true}
+        className="w-full flex-1"
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        onSlideChange={(swiper) => setCurrentindex(swiper.activeIndex + 1)}
+      >
+        {[...Array(pagsize)].map((_, j) => renderSwiperSlide(j))}
+      </Swiper>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="w-[100px] h-[84px] bg-white py-[10px] px-4 rounded-r-3xl mt-3">
+    <div className="relative top-4 w-[100px] h-[84px] bg-white py-[10px] px-4 rounded-r-3xl">
       <Image
         src="/assets/icons/Logo_POS.png"
         alt="logo"
