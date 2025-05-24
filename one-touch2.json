@@ -1,0 +1,884 @@
+[
+  {
+    "seqCode": 1,
+    "description": "ผัดกระเพรา",
+    "image": "https://my-pos-image.s3.ap-southeast-2.amazonaws.com/padka-pao.jpg",
+    "level2": [
+      {
+        "id": 1,
+        "productName": "ผัดกะเพราหมูสับ",
+        "price": 50,
+        "cost": 25,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-moo.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 2,
+        "productName": "ผัดกะเพราไก่",
+        "price": 50,
+        "cost": 24,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-kai.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 3,
+        "productName": "ผัดกะเพราเนื้อ",
+        "price": 60,
+        "cost": 32,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-neua.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 4,
+        "productName": "ผัดกะเพราทะเล",
+        "price": 70,
+        "cost": 38,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-seafood.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 5,
+        "productName": "ผัดกะเพราหมูกรอบ",
+        "price": 65,
+        "cost": 35,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-crispy-pork.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 6,
+        "productName": "ผัดกะเพราปลาหมึก",
+        "price": 65,
+        "cost": 34,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-squid.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 7,
+        "productName": "ผัดกะเพรากุ้ง",
+        "price": 70,
+        "cost": 36,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-shrimp.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      }
+    ]
+  },
+    {
+    "seqCode": 2,
+    "description": "ผัดกระเพรา",
+    "image": "https://my-pos-image.s3.ap-southeast-2.amazonaws.com/padka-pao.jpg",
+    "level2": [
+      {
+        "id": 1,
+        "productName": "ผัดกะเพราหมูสับ",
+        "price": 50,
+        "cost": 25,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-moo.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 2,
+        "productName": "ผัดกะเพราไก่",
+        "price": 50,
+        "cost": 24,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-kai.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 3,
+        "productName": "ผัดกะเพราเนื้อ",
+        "price": 60,
+        "cost": 32,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-neua.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 4,
+        "productName": "ผัดกะเพราทะเล",
+        "price": 70,
+        "cost": 38,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-seafood.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 5,
+        "productName": "ผัดกะเพราหมูกรอบ",
+        "price": 65,
+        "cost": 35,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-crispy-pork.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 6,
+        "productName": "ผัดกะเพราปลาหมึก",
+        "price": 65,
+        "cost": 34,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-squid.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 7,
+        "productName": "ผัดกะเพรากุ้ง",
+        "price": 70,
+        "cost": 36,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-shrimp.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      }
+    ]
+  },
+    {
+    "seqCode": 3,
+    "description": "ผัดกระเพรา",
+    "image": "https://my-pos-image.s3.ap-southeast-2.amazonaws.com/padka-pao.jpg",
+    "level2": [
+      {
+        "id": 1,
+        "productName": "ผัดกะเพราหมูสับ",
+        "price": 50,
+        "cost": 25,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-moo.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 2,
+        "productName": "ผัดกะเพราไก่",
+        "price": 50,
+        "cost": 24,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-kai.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 3,
+        "productName": "ผัดกะเพราเนื้อ",
+        "price": 60,
+        "cost": 32,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-neua.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 4,
+        "productName": "ผัดกะเพราทะเล",
+        "price": 70,
+        "cost": 38,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-seafood.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 5,
+        "productName": "ผัดกะเพราหมูกรอบ",
+        "price": 65,
+        "cost": 35,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-crispy-pork.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 6,
+        "productName": "ผัดกะเพราปลาหมึก",
+        "price": 65,
+        "cost": 34,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-squid.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 7,
+        "productName": "ผัดกะเพรากุ้ง",
+        "price": 70,
+        "cost": 36,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-shrimp.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      }
+    ]
+  },
+    {
+    "seqCode": 4,
+    "description": "ผัดกระเพรา",
+    "image": "https://my-pos-image.s3.ap-southeast-2.amazonaws.com/padka-pao.jpg",
+    "level2": [
+      {
+        "id": 1,
+        "productName": "ผัดกะเพราหมูสับ",
+        "price": 50,
+        "cost": 25,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-moo.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 2,
+        "productName": "ผัดกะเพราไก่",
+        "price": 50,
+        "cost": 24,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-kai.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 3,
+        "productName": "ผัดกะเพราเนื้อ",
+        "price": 60,
+        "cost": 32,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-neua.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 4,
+        "productName": "ผัดกะเพราทะเล",
+        "price": 70,
+        "cost": 38,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-seafood.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 5,
+        "productName": "ผัดกะเพราหมูกรอบ",
+        "price": 65,
+        "cost": 35,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-crispy-pork.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 6,
+        "productName": "ผัดกะเพราปลาหมึก",
+        "price": 65,
+        "cost": 34,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-squid.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 7,
+        "productName": "ผัดกะเพรากุ้ง",
+        "price": 70,
+        "cost": 36,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-shrimp.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      }
+    ]
+  },
+    {
+    "seqCode": 5,
+    "description": "ผัดกระเพรา",
+    "image": "https://my-pos-image.s3.ap-southeast-2.amazonaws.com/padka-pao.jpg",
+    "level2": [
+      {
+        "id": 1,
+        "productName": "ผัดกะเพราหมูสับ",
+        "price": 50,
+        "cost": 25,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-moo.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 2,
+        "productName": "ผัดกะเพราไก่",
+        "price": 50,
+        "cost": 24,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-kai.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 3,
+        "productName": "ผัดกะเพราเนื้อ",
+        "price": 60,
+        "cost": 32,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-neua.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 4,
+        "productName": "ผัดกะเพราทะเล",
+        "price": 70,
+        "cost": 38,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-seafood.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 5,
+        "productName": "ผัดกะเพราหมูกรอบ",
+        "price": 65,
+        "cost": 35,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-crispy-pork.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 6,
+        "productName": "ผัดกะเพราปลาหมึก",
+        "price": 65,
+        "cost": 34,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-squid.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 7,
+        "productName": "ผัดกะเพรากุ้ง",
+        "price": 70,
+        "cost": 36,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-shrimp.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      }
+    ]
+  },
+    {
+    "seqCode": 6,
+    "description": "ผัดกระเพรา",
+    "image": "https://my-pos-image.s3.ap-southeast-2.amazonaws.com/padka-pao.jpg",
+    "level2": [
+      {
+        "id": 1,
+        "productName": "ผัดกะเพราหมูสับ",
+        "price": 50,
+        "cost": 25,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-moo.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 2,
+        "productName": "ผัดกะเพราไก่",
+        "price": 50,
+        "cost": 24,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-kai.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 3,
+        "productName": "ผัดกะเพราเนื้อ",
+        "price": 60,
+        "cost": 32,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-neua.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 4,
+        "productName": "ผัดกะเพราทะเล",
+        "price": 70,
+        "cost": 38,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-seafood.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 5,
+        "productName": "ผัดกะเพราหมูกรอบ",
+        "price": 65,
+        "cost": 35,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-crispy-pork.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 6,
+        "productName": "ผัดกะเพราปลาหมึก",
+        "price": 65,
+        "cost": 34,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-squid.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 7,
+        "productName": "ผัดกะเพรากุ้ง",
+        "price": 70,
+        "cost": 36,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-shrimp.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      }
+    ]
+  },
+    {
+    "seqCode": 7,
+    "description": "ผัดกระเพรา",
+    "image": "https://my-pos-image.s3.ap-southeast-2.amazonaws.com/padka-pao.jpg",
+    "level2": [
+      {
+        "id": 1,
+        "productName": "ผัดกะเพราหมูสับ",
+        "price": 50,
+        "cost": 25,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-moo.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 2,
+        "productName": "ผัดกะเพราไก่",
+        "price": 50,
+        "cost": 24,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-kai.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 3,
+        "productName": "ผัดกะเพราเนื้อ",
+        "price": 60,
+        "cost": 32,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-neua.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 4,
+        "productName": "ผัดกะเพราทะเล",
+        "price": 70,
+        "cost": 38,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-seafood.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 5,
+        "productName": "ผัดกะเพราหมูกรอบ",
+        "price": 65,
+        "cost": 35,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-crispy-pork.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 6,
+        "productName": "ผัดกะเพราปลาหมึก",
+        "price": 65,
+        "cost": 34,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-squid.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 7,
+        "productName": "ผัดกะเพรากุ้ง",
+        "price": 70,
+        "cost": 36,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-shrimp.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      }
+    ]
+  },
+    {
+    "seqCode": 8,
+    "description": "ผัดกระเพรา",
+    "image": "https://my-pos-image.s3.ap-southeast-2.amazonaws.com/padka-pao.jpg",
+    "level2": [
+      {
+        "id": 1,
+        "productName": "ผัดกะเพราหมูสับ",
+        "price": 50,
+        "cost": 25,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-moo.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 2,
+        "productName": "ผัดกะเพราไก่",
+        "price": 50,
+        "cost": 24,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-kai.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 3,
+        "productName": "ผัดกะเพราเนื้อ",
+        "price": 60,
+        "cost": 32,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-neua.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 4,
+        "productName": "ผัดกะเพราทะเล",
+        "price": 70,
+        "cost": 38,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-seafood.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 5,
+        "productName": "ผัดกะเพราหมูกรอบ",
+        "price": 65,
+        "cost": 35,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-crispy-pork.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 6,
+        "productName": "ผัดกะเพราปลาหมึก",
+        "price": 65,
+        "cost": 34,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-squid.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 7,
+        "productName": "ผัดกะเพรากุ้ง",
+        "price": 70,
+        "cost": 36,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-shrimp.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      }
+    ]
+  },
+    {
+    "seqCode": 9,
+    "description": "ผัดกระเพรา",
+    "image": "https://my-pos-image.s3.ap-southeast-2.amazonaws.com/padka-pao.jpg",
+    "level2": [
+      {
+        "id": 1,
+        "productName": "ผัดกะเพราหมูสับ",
+        "price": 50,
+        "cost": 25,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-moo.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 2,
+        "productName": "ผัดกะเพราไก่",
+        "price": 50,
+        "cost": 24,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-kai.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 3,
+        "productName": "ผัดกะเพราเนื้อ",
+        "price": 60,
+        "cost": 32,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-neua.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 4,
+        "productName": "ผัดกะเพราทะเล",
+        "price": 70,
+        "cost": 38,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-seafood.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 5,
+        "productName": "ผัดกะเพราหมูกรอบ",
+        "price": 65,
+        "cost": 35,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-crispy-pork.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 6,
+        "productName": "ผัดกะเพราปลาหมึก",
+        "price": 65,
+        "cost": 34,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-squid.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      },
+      {
+        "id": 7,
+        "productName": "ผัดกะเพรากุ้ง",
+        "price": 70,
+        "cost": 36,
+        "qty": 1,
+        "category": "FOOD",
+        "image": "https://example.com/images/krapow-shrimp.jpg",
+        "addons": [
+          { "name": "ไข่ดาว/ไข่เจียว", "price": 10, "qty": 1 },
+          { "name": "พิเศษ", "price": 10, "qty": 1 }
+        ]
+      }
+    ]
+  }
+]
