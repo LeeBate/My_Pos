@@ -76,7 +76,7 @@ function GridPagination({
   };
 
   return (
-    <div className="flex flex-row items-center justify-center w-full gap-2 xl:gap-1 ml-0 py-2">
+    <div className="flex flex-row items-center justify-center w-full gap-2 xl:gap-1 ml-0 py-4">
       <div>
         <ButtonArrow
           direction="back"

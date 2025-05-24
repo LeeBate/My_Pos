@@ -14,7 +14,7 @@ import GridPagination from "../pagination";
 import type { Swiper as SwiperClass } from "swiper";
 import OneTouchLevel2 from "./one-touch-level2";
 
-const ITEM_SIZE = 15;
+const ITEM_SIZE = 20;
 
 const LeftSectionClient = () => {
   const [oneTouchInfo, setOneTouchInfo] = useState<OneTouch[]>([]);
@@ -60,13 +60,13 @@ const LeftSectionClient = () => {
                 <div
                   key={item?._id}
                   onClick={() => handleItemClick(item)}
-                  className="w-[8.621vw] h-[20.139vh] bg-white shadow-sm rounded-[2.778vh] p-2 flex flex-col items-center border border-gray-200 gap-2"
+                  className="w-[9.5vw] h-[18.3vh] bg-white shadow-sm rounded-[2.778vh] px-5 pt-5 flex flex-col items-center gap-2 "
                 >
-                  <div className="w-[6.897vw] h-[11.111vh]">
+                  <div className="w-[6vw] h-[9.111vh]">
                     <img
                       src={item?.image}
                       alt={item?.description}
-                      className="w-full h-full object-cover rounded-[2.778vh]"
+                      className="w-full h-full object-cover rounded-[1.778vh] shadow-sm shadow-black/30"
                     />
                   </div>
 
