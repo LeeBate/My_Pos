@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { OneTouch } from "@/types/onetouch";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // อย่าลืมนำเข้า CSS
@@ -10,7 +10,29 @@ type Props = {
   oneTouchInfo: OneTouch[];
 };
 
-const LeftSectionClient = ({ oneTouchInfo }: Props) => {
+const LeftSectionClient = () => {
+  const [oneTouchInfo, setOneTouchInfo] = useState<OneTouch[]>([]);
+  useEffect(() => {
+      fetch("/api/get-onetouch")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch OneTouch data");
+          }
+          return response.json();
+        }
+        )
+        .then((data: OneTouch[]) => {
+          setOneTouchInfo(data);
+        }
+        )
+        .catch((error) => {
+          console.error("Error fetching OneTouch data:", error);
+        }
+        );
+    }, [])
+
+console.log('oneTouchInfo',oneTouchInfo)
+
   const itemsize = 20;
   const pagsize = Math.ceil(oneTouchInfo?.length / itemsize);
   const [currentindex, setCurrentindex] = useState(1);
