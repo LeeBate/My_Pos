@@ -4,6 +4,7 @@ export type OneTouch = {
     description: string;
     image: string;
     level2: {
+        description: string;
         id: number;
         productName: string;
         price: number;

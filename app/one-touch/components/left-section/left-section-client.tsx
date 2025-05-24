@@ -85,7 +85,12 @@ const LeftSectionClient = () => {
 
       {selectedItem && selectedItem?.level2 ? (
         <OneTouchLevel2
-          selectedItem={selectedItem}
+          selectedItem={{
+            level2: selectedItem.level2.map((item) => ({
+              ...item,
+              description: item.description ?? item.productName, // fallback if description is missing
+            })),
+          }}
           setSelectedItem={setSelectedItem}
           setCurrentIndex={setCurrentIndex}
         />
