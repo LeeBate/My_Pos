@@ -1,11 +1,12 @@
 // services/onetouchService.ts
-import { OneTouch } from '@/types/onetouch';
+import { getApiUrl } from "@/lib/config";
+import { OneTouch } from "@/types/onetouch";
 
 export async function getOneTouchFromApi(): Promise<OneTouch[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-onetouch`, {
-    next: { revalidate: 300 }, // ✅ Cache 60 วินาที, ลด fast refresh
-  });
+  const url = getApiUrl("/api/get-onetouch");
+  const res = await fetch(url, { cache: "no-store" });
 
   if (!res.ok) throw new Error("Failed to fetch OneTouch data");
+
   return res.json();
 }
