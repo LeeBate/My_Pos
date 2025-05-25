@@ -19,7 +19,7 @@ function OneTouchLevel2({
   setCurrentIndex,
 }: OneTouchLevel2Props) {
   return (
-    <div className="w-full max-h-screen flex flex-col bg-red-300">
+    <div className="w-full max-h-screen flex flex-col bg-[#E6EEE6]">
       <button
         className="self-start mb-4 px-4 py-2 bg-gray-200 rounded"
         onClick={() => {

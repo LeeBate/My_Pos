@@ -60,13 +60,13 @@ const LeftSectionClient = () => {
                 <div
                   key={item?._id}
                   onClick={() => handleItemClick(item)}
-                  className="w-[9.5vw] h-[18.3vh] bg-white shadow-sm rounded-[2.778vh] px-5 pt-5 flex flex-col items-center gap-2 "
+                  className="w-[9.5vw] h-[17.3vh] bg-white shadow-sm rounded-[2.778vh] px-3 pt-3 flex flex-col items-center gap-2 "
                 >
-                  <div className="w-[6vw] h-[9.111vh]">
+                  <div className="w-[7vw] h-[8.111vh] flex items-center justify-center shadow-sm shadow-black/30 rounded-[1.778vh] ">
                     <img
                       src={item?.image}
                       alt={item?.description}
-                      className="w-full h-full object-cover rounded-[1.778vh] shadow-sm shadow-black/30"
+                      className="w-[40px] h-[40px] object-cover"
                     />
                   </div>
 

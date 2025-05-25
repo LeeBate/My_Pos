@@ -50,7 +50,7 @@ function GridPagination({
           flex items-center justify-center
           rounded-[1.852vh]
           w-[4vw] xl:w-[5.333vw]
-          h-[4.667vh] xl:h-[6.926vh]
+          h-[6.667vh] xl:h-[6.926vh]
           transition-none
           shadow-none
           ${
@@ -76,7 +76,7 @@ function GridPagination({
   };
 
   return (
-    <div className="flex flex-row items-center justify-center w-full gap-2 xl:gap-1 ml-0 py-4">
+    <div className="flex flex-row items-center justify-center w-full gap-2 xl:gap-1 ml-0 py-2">
       <div>
         <ButtonArrow
           direction="back"
