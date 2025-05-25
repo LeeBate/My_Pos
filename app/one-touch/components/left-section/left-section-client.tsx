@@ -79,8 +79,23 @@ const LeftSectionClient = () => {
     [oneTouchInfo, pageSize]
   );
 
+  const [size, setSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    function handleResize() {
+      setSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    handleResize(); // set initial size
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
   return (
     <div className="w-full max-h-screen flex flex-col">
+      <div className="fixed bottom-2 right-2 bg-white/80 rounded px-4 py-2 shadow text-xs z-50">
+      Width: {size.width}px, Height: {size.height}px
+    </div>
       <h1 className="text-center text-[3.5vw] leading-[1.5]">เมนู</h1>
 
       {selectedItem && selectedItem?.level2 ? (
