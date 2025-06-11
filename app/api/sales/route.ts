@@ -26,8 +26,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Update product stock
+    const { ObjectId } = require("mongodb")
     for (const item of sale.items) {
-      await db.collection("products").updateOne({ _id: item.productId }, { $inc: { stock: -item.quantity } })
+      await db.collection("products").updateOne({ _id: new ObjectId(item.productId) }, { $inc: { stock: -item.quantity } })
     }
 
     const result = await db.collection("sales").insertOne(sale)

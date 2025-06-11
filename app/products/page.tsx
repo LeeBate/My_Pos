@@ -10,14 +10,17 @@ import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Plus, Edit, Trash2 } from "lucide-react"
+import { Plus, Edit, Trash2, Search, Filter } from "lucide-react"
 import type { Product } from "@/types"
 import { useToast } from "@/hooks/use-toast"
 
 export default function ProductsPage() {
   const [products, setProducts] = useState<Product[]>([])
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [editingProduct, setEditingProduct] = useState<Product | null>(null)
+  const [searchTerm, setSearchTerm] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("all")
   const [formData, setFormData] = useState({
     name: "",
     price: "",
@@ -33,6 +36,10 @@ export default function ProductsPage() {
     fetchProducts()
   }, [])
 
+  useEffect(() => {
+    filterProducts()
+  }, [products, searchTerm, selectedCategory])
+
   const fetchProducts = async () => {
     try {
       const response = await fetch("/api/products")
@@ -42,6 +49,29 @@ export default function ProductsPage() {
       console.error("Failed to fetch products:", error)
     }
   }
+
+  const filterProducts = () => {
+    let filtered = products
+
+    // Filter by search term
+    if (searchTerm) {
+      filtered = filtered.filter(
+        (product) =>
+          product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          product.barcode?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          product.description?.toLowerCase().includes(searchTerm.toLowerCase()),
+      )
+    }
+
+    // Filter by category
+    if (selectedCategory !== "all") {
+      filtered = filtered.filter((product) => product.category === selectedCategory)
+    }
+
+    setFilteredProducts(filtered)
+  }
+
+  const categories = ["all", ...Array.from(new Set(products.map((p) => p.category)))]
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -244,9 +274,61 @@ export default function ProductsPage() {
         </Dialog>
       </div>
 
+      {/* เพิ่มส่วน Filter */}
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle className="flex items-center">
+            <Filter className="w-5 h-5 mr-2" />
+            ค้นหาและกรองข้อมูล
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex gap-4 mb-4">
+            <div className="flex-1">
+              <div className="relative">
+                <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder="ค้นหาสินค้า, บาร์โค้ด หรือรายละเอียด..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
+            </div>
+            <Button
+              variant="outline"
+              onClick={() => {
+                setSearchTerm("")
+                setSelectedCategory("all")
+              }}
+            >
+              ล้างตัวกรอง
+            </Button>
+          </div>
+
+          <div className="flex gap-2 flex-wrap">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={selectedCategory === category ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category === "all" ? "ทั้งหมด" : category}
+                {category !== "all" && (
+                  <span className="ml-1 text-xs">({products.filter((p) => p.category === category).length})</span>
+                )}
+              </Button>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
       <Card>
         <CardHeader>
-          <CardTitle>รายการสินค้า</CardTitle>
+          <CardTitle>
+            รายการสินค้า ({filteredProducts.length} จาก {products.length} รายการ)
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <Table>
@@ -262,10 +344,12 @@ export default function ProductsPage() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {products.map((product) => (
+              {filteredProducts.map((product) => (
                 <TableRow key={product._id}>
                   <TableCell className="font-medium">{product.name}</TableCell>
-                  <TableCell>{product.category}</TableCell>
+                  <TableCell>
+                    <Badge variant="outline">{product.category}</Badge>
+                  </TableCell>
                   <TableCell>฿{product.price.toFixed(2)}</TableCell>
                   <TableCell>฿{product.cost.toFixed(2)}</TableCell>
                   <TableCell>{product.stock}</TableCell>

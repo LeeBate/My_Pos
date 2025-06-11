@@ -1,66 +1,76 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { TrendingUp, DollarSign, ShoppingCart, Calendar, Package } from "lucide-react"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  TrendingUp,
+  DollarSign,
+  ShoppingCart,
+  Calendar,
+  Package,
+} from "lucide-react";
+import Link from "next/link";
+import { formatDate } from "@/lib/format-helper";
 
 interface SalesAnalytics {
-  totalRevenue: number
-  totalTransactions: number
-  averageTransaction: number
+  totalRevenue: number;
+  totalTransactions: number;
+  averageTransaction: number;
   topProducts: Array<{
-    productName: string
-    quantity: number
-    revenue: number
-  }>
+    productName: string;
+    quantity: number;
+    revenue: number;
+  }>;
   dailySales: Array<{
-    date: string
-    revenue: number
-    transactions: number
-  }>
+    date: string;
+    revenue: number;
+    transactions: number;
+  }>;
   paymentMethods: Array<{
-    method: string
-    count: number
-    revenue: number
-  }>
+    method: string;
+    count: number;
+    revenue: number;
+  }>;
 }
 
 export default function SalesAnalyticsPage() {
-  const [analytics, setAnalytics] = useState<SalesAnalytics | null>(null)
-  const [dateFrom, setDateFrom] = useState("")
-  const [dateTo, setDateTo] = useState("")
-  const [isLoading, setIsLoading] = useState(true)
+  const [analytics, setAnalytics] = useState<SalesAnalytics | null>(null);
+  const [dateFrom, setDateFrom] = useState("");
+  const [dateTo, setDateTo] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Set default dates (last 30 days)
-    const today = new Date()
-    const thirtyDaysAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000)
-    setDateFrom(thirtyDaysAgo.toISOString().split("T")[0])
-    setDateTo(today.toISOString().split("T")[0])
-  }, [])
+    const today = new Date();
+
+    const thirtyDaysAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+    setDateFrom(formatDate(thirtyDaysAgo));
+    setDateTo(formatDate(today));
+  }, []);
 
   useEffect(() => {
     if (dateFrom && dateTo) {
-      fetchAnalytics()
+      fetchAnalytics();
     }
-  }, [dateFrom, dateTo])
+  }, [dateFrom, dateTo]);
 
   const fetchAnalytics = async () => {
     try {
-      setIsLoading(true)
-      const response = await fetch(`/api/sales/analytics?from=${dateFrom}&to=${dateTo}`)
-      const data = await response.json()
-      setAnalytics(data)
+      setIsLoading(true);
+      const response = await fetch(
+        `/api/sales/analytics?from=${dateFrom}&to=${dateTo}`
+      );
+      const data = await response.json();
+      setAnalytics(data);
     } catch (error) {
-      console.error("Failed to fetch analytics:", error)
+      console.error("Failed to fetch analytics:", error);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   if (isLoading || !analytics) {
     return (
@@ -70,7 +80,7 @@ export default function SalesAnalyticsPage() {
           <span className="ml-2">กำลังโหลดข้อมูล...</span>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -104,11 +114,21 @@ export default function SalesAnalyticsPage() {
           <div className="flex gap-4 items-end">
             <div>
               <Label htmlFor="dateFrom">วันที่เริ่มต้น</Label>
-              <Input id="dateFrom" type="date" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
+              <Input
+                id="dateFrom"
+                type="date"
+                value={dateFrom}
+                onChange={(e) => setDateFrom(e.target.value)}
+              />
             </div>
             <div>
               <Label htmlFor="dateTo">วันที่สิ้นสุด</Label>
-              <Input id="dateTo" type="date" value={dateTo} onChange={(e) => setDateTo(e.target.value)} />
+              <Input
+                id="dateTo"
+                type="date"
+                value={dateTo}
+                onChange={(e) => setDateTo(e.target.value)}
+              />
             </div>
             <Button onClick={fetchAnalytics}>
               <Calendar className="w-4 h-4 mr-2" />
@@ -126,7 +146,9 @@ export default function SalesAnalyticsPage() {
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">฿{analytics.totalRevenue.toLocaleString()}</div>
+            <div className="text-2xl font-bold">
+              ฿{analytics?.totalRevenue?.toLocaleString()}
+            </div>
           </CardContent>
         </Card>
 
@@ -136,7 +158,9 @@ export default function SalesAnalyticsPage() {
             <ShoppingCart className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{analytics.totalTransactions}</div>
+            <div className="text-2xl font-bold">
+              {analytics.totalTransactions}
+            </div>
           </CardContent>
         </Card>
 
@@ -146,7 +170,9 @@ export default function SalesAnalyticsPage() {
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">฿{analytics.averageTransaction.toFixed(2)}</div>
+            <div className="text-2xl font-bold">
+              ฿{analytics?.averageTransaction?.toFixed(2)}
+            </div>
           </CardContent>
         </Card>
 
@@ -156,7 +182,9 @@ export default function SalesAnalyticsPage() {
             <Package className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{analytics.topProducts.length}</div>
+            <div className="text-2xl font-bold">
+              {analytics?.topProducts?.length}
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -169,14 +197,16 @@ export default function SalesAnalyticsPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {analytics.topProducts.slice(0, 10).map((product, index) => (
+              {analytics?.topProducts?.slice(0, 10)?.map((product, index) => (
                 <div key={index} className="flex items-center justify-between">
                   <div>
                     <p className="font-medium">{product.productName}</p>
-                    <p className="text-sm text-muted-foreground">ขายได้ {product.quantity} ชิ้น</p>
+                    <p className="text-sm text-muted-foreground">
+                      ขายได้ {product.quantity} ชิ้น
+                    </p>
                   </div>
                   <div className="text-right">
-                    <p className="font-bold">฿{product.revenue.toFixed(2)}</p>
+                    <p className="font-bold">฿{product?.revenue?.toFixed(2)}</p>
                   </div>
                 </div>
               ))}
@@ -191,18 +221,28 @@ export default function SalesAnalyticsPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {analytics.paymentMethods.map((method, index) => (
+              {analytics?.paymentMethods?.map((method, index) => (
                 <div key={index} className="flex items-center justify-between">
                   <div>
                     <p className="font-medium">
-                      {method.method === "cash" ? "เงินสด" : method.method === "card" ? "บัตร" : "โอน"}
+                      {method.method === "cash"
+                        ? "เงินสด"
+                        : method.method === "card"
+                        ? "บัตร"
+                        : "โอน"}
                     </p>
-                    <p className="text-sm text-muted-foreground">{method.count} รายการ</p>
+                    <p className="text-sm text-muted-foreground">
+                      {method.count} รายการ
+                    </p>
                   </div>
                   <div className="text-right">
                     <p className="font-bold">฿{method.revenue.toFixed(2)}</p>
                     <p className="text-sm text-muted-foreground">
-                      {((method.revenue / analytics.totalRevenue) * 100).toFixed(1)}%
+                      {(
+                        (method.revenue / analytics.totalRevenue) *
+                        100
+                      ).toFixed(1)}
+                      %
                     </p>
                   </div>
                 </div>
@@ -212,5 +252,5 @@ export default function SalesAnalyticsPage() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
