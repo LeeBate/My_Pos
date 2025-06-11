@@ -1,11 +1,5 @@
-import Header from "./components/Header";
-import OneTouchList from "./one-touch/page";
+import { redirect } from "next/navigation"
 
 export default function Home() {
-  return (
-    <div className="w-full max-h-screen">
-      <Header />
-      <OneTouchList />
-    </div>
-  );
+  redirect("/dashboard")
 }
